@@ -1,7 +1,28 @@
 import React from "react";
 
+import {
+  About,
+  Footer,
+  Header,
+  Skills,
+  Testimonials,
+  Works,
+} from "./container";
+
+import { Navbar } from "./components";
+
 const App = () => {
-  return <div className="">App</div>;
+  return (
+    <div className="App relative h-screen w-full bg-primary">
+      <Navbar />
+      <Header />
+      <About />
+      <Works />
+      <Skills />
+      <Testimonials />
+      <Footer />
+    </div>
+  );
 };
 
 export default App;
