@@ -8,8 +8,8 @@ module.exports = {
         work: ["Work Sans"],
       },
       colors: {
-        primary: "#151513",
-        secondary: "white",
+        primary: "#151921",
+        secondary: "#98C1D9",
       },
     },
   },
