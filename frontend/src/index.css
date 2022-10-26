@@ -21,3 +21,7 @@
   font-family: "Work Sans";
   src: url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 }
+
+.App {
+  @apply flex min-h-screen w-full flex-col items-center dark:bg-dark;
+}

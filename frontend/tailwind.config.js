@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -8,8 +10,8 @@ module.exports = {
         work: ["Work Sans"],
       },
       colors: {
-        primary: "#151921",
-        secondary: "#98C1D9",
+        primary: "#feffff",
+        dark: "#101827",
       },
     },
   },
