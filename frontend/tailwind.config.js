@@ -8,10 +8,12 @@ module.exports = {
       fontFamily: {
         luxurious: ["Luxurious Roman"],
         work: ["Work Sans"],
+        saira: ["Saira Condensed"],
       },
       colors: {
         primary: "#feffff",
-        dark: "#101827",
+        dark: "#151515",
+        secondary: "#191b1d",
       },
     },
   },

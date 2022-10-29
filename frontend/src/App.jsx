@@ -9,12 +9,11 @@ import {
   Works,
 } from "./container";
 
-import { Navbar, Switcher } from "./components";
+import { Navbar } from "./components";
 
 const App = () => {
   return (
-    <div className="App">
-      <Switcher />
+    <div className="flex min-h-screen w-full flex-col bg-dark text-white">
       <Navbar />
       <Header />
       <About />

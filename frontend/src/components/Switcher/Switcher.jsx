@@ -15,11 +15,11 @@ export default function Switcher() {
 
   return (
     <>
-      <div className="m-16 flex flex-col items-center">
+      <div className="mr-[5rem] flex flex-col items-center sm:mr-[10rem]">
         <DarkModeSwitch
           checked={darkSide}
           onChange={toggleDarkMode}
-          size={36}
+          size={45}
         />
       </div>
     </>
