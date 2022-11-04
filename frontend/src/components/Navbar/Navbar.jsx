@@ -5,35 +5,89 @@ import {
   hamburgerTop,
   navBarAnimation,
   popUp,
+  popUpLink,
   popUpParent,
+  popUpParentLink,
 } from "../../animation";
+import { useGlobalContext } from "../Context/useContext";
+import facebook from "../../assets/icons8-facebook.svg";
 
 const Navbar = () => {
+  const {
+    mouseDefault,
+    mouseScaleUp,
+    mouseChangeBackground,
+    mouseSocialLinks,
+  } = useGlobalContext();
   const [open, setOpen] = useState(false);
+  console.log("hello");
+
+  const social = [
+    {
+      name: "Facebook",
+      svg: facebook,
+    },
+    { name: "Instagram" },
+    { name: "YouTube" },
+    { name: "Git Hub" },
+  ];
 
   const navToggle = () => {
     setOpen((prev) => !prev);
   };
 
   return (
-    <div className="relative flex w-full items-center justify-center py-20 px-28">
+    <div className="sticky flex w-full items-center justify-center py-20 px-[10rem]">
       <motion.div
         className="absolute top-0 w-screen bg-secondary transition-all duration-200 ease-linear"
         variants={navBarAnimation}
         initial="hidden"
         animate={open ? "show" : "hidden"}
       ></motion.div>
-      <div className="z-10 mr-5 sm:mr-28">
-        <h1 className="mr-5 font-saira text-4xl tracking-widest">JAYDEN</h1>
+      <div className="z-10 mr-5 sm:mr-[13rem]">
+        <motion.a
+          className="mr-5 font-saira text-4xl tracking-widest"
+          onMouseEnter={mouseScaleUp}
+          onMouseLeave={mouseDefault}
+        >
+          JAYDEN
+        </motion.a>
+        <motion.div
+          className={`absolute top-[47.5vh] flex flex-col gap-4 ${
+            open ? "" : "pointer-events-none"
+          }`}
+          variants={popUpParentLink}
+          onMouseEnter={mouseSocialLinks}
+          onMouseLeave={mouseDefault}
+          initial="close"
+          animate={open ? "open" : "close"}
+        >
+          {social.map((item) => {
+            return (
+              <motion.div key={item.name} className={`w-full overflow-hidden`}>
+                <motion.a
+                  href="#"
+                  className="cursor-pointer text-lg font-extralight tracking-wider"
+                  variants={popUpLink}
+                >
+                  {item.name}
+                </motion.a>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
       <div className="z-10 mr-auto">
         <div
-          className="hamburger flex cursor-pointer flex-col gap-2"
+          onMouseEnter={mouseScaleUp}
+          onMouseLeave={mouseDefault}
+          className="hamburger flex cursor-pointer flex-col gap-2 p-4"
           onClick={navToggle}
         >
           <motion.div
             variants={hamburgerTop}
             animate={open ? "open" : "close"}
+            whileHover="hover"
             className="h-[3px] w-10 cursor-pointer bg-primary"
           ></motion.div>
           <motion.div
@@ -42,49 +96,55 @@ const Navbar = () => {
             className="h-[3px] w-10 translate-x-10 cursor-pointer bg-primary"
           ></motion.div>
         </div>
-        {navigation()}
+        {navigation(mouseChangeBackground, mouseDefault, open)}
       </div>
-      <div className="z-10">Contact Me</div>
+      <motion.div
+        onMouseEnter={mouseScaleUp}
+        onMouseLeave={mouseDefault}
+        className="group z-10 flex cursor-pointer items-center justify-center"
+      >
+        <div className="bg-circle z-1 absolute mr-20 h-12 w-[3rem] rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8rem]"></div>
+        <h1 className="z-10 font-saira text-xl tracking-wide">Contact Me</h1>
+      </motion.div>
     </div>
   );
 
-  function navigation() {
+  function navigation(mouseChangeBackground, mouseDefault, open) {
+    const items = [
+      { name: "About me", id: 1, hoverState: false },
+      { name: "Skill set", id: 2, hoverState: false },
+      { name: "Projects", id: 3, hoverState: false },
+      { name: "Hire me", id: 4, hoverState: false },
+      { name: "Contact me", id: 5, hoverState: false },
+    ];
+
     return (
       <motion.ul
-        className={`nav-menu absolute top-[150%] z-10 flex flex-col gap-10`}
+        className={`nav-menu ${
+          open ? "" : "pointer-events-none"
+        } absolute top-[150%] z-10 flex flex-col gap-10`}
         variants={popUpParent}
+        initial="close"
         animate={open ? "open" : "close"}
+        onMouseEnter={mouseChangeBackground}
+        onMouseLeave={mouseDefault}
       >
-        <motion.li
-          className="nav-item hover: cursor-pointer font-saira text-4xl tracking-wider transition-all duration-500 hover:ml-4"
-          variants={popUp}
-        >
-          About me
-        </motion.li>
-        <motion.li
-          className="nav-item hover: cursor-pointer font-saira text-4xl tracking-wider transition-all duration-500 hover:ml-4"
-          variants={popUp}
-        >
-          Skill set
-        </motion.li>
-        <motion.li
-          className="nav-item hover: cursor-pointer font-saira text-4xl tracking-wider transition-all duration-500 hover:ml-4"
-          variants={popUp}
-        >
-          Projects
-        </motion.li>
-        <motion.li
-          className="nav-item hover: cursor-pointer font-saira text-4xl tracking-wider transition-all duration-500 hover:ml-4"
-          variants={popUp}
-        >
-          Hire Me
-        </motion.li>
-        <motion.li
-          className="nav-item hover: cursor-pointer font-saira text-4xl tracking-wider transition-all duration-500 hover:ml-4"
-          variants={popUp}
-        >
-          Contact Me
-        </motion.li>
+        {items.map((item) => {
+          return (
+            <motion.div key={item.id} className="h-full w-full overflow-hidden">
+              <motion.li
+                className="cursor-pointer transition-all duration-500 hover:ml-6"
+                variants={popUp}
+              >
+                <motion.p
+                  className={`font-saira text-4xl tracking-wider ${item.id}`}
+                >
+                  {item.name}
+                </motion.p>
+              </motion.li>
+            </motion.div>
+          );
+        })}
       </motion.ul>
     );
   }

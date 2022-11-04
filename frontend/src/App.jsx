@@ -10,18 +10,23 @@ import {
 } from "./container";
 
 import { Navbar } from "./components";
+import Cursor from "./components/Cursor/Cursor";
+import ContextProvider from "./components/Context/useContext";
 
 const App = () => {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-dark text-white">
-      <Navbar />
-      <Header />
-      <About />
-      <Works />
-      <Skills />
-      <Testimonials />
-      <Footer />
-    </div>
+    <ContextProvider>
+      <div className="relative flex min-h-screen w-full flex-col bg-dark text-white">
+        <Cursor />
+        <Navbar />
+        <Header />
+        <About />
+        <Works />
+        <Skills />
+        <Testimonials />
+        <Footer />
+      </div>
+    </ContextProvider>
   );
 };
 
