@@ -7,7 +7,7 @@ export const navBarAnimation = {
   },
 
   show: {
-    height: "70vh",
+    height: "75vh",
   },
 };
 
@@ -47,15 +47,13 @@ export const popUp = {
 
 export const popUpParentLink = {
   open: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.07,
-      delayChildren: 0.9,
+      delayChildren: 1.1,
       when: "beforeChildren",
     },
   },
   close: {
-    opacity: 0,
     transition: {
       staggerChildren: 0.07,
       staggerDirection: -1,
@@ -75,6 +73,7 @@ export const popUpLink = {
   },
 
   close: {
+    rotateZ: "10deg",
     y: 50,
     opacity: 0,
     transition: {

@@ -9,7 +9,7 @@ import {
   popUpParent,
   popUpParentLink,
 } from "../../animation";
-import { useGlobalContext } from "../Context/useContext";
+import { useGlobalContext } from "../Context/ContextProvider";
 import facebook from "../../assets/icons8-facebook.svg";
 
 const Navbar = () => {
@@ -53,7 +53,7 @@ const Navbar = () => {
           JAYDEN
         </motion.a>
         <motion.div
-          className={`absolute top-[47.5vh] flex flex-col gap-4 ${
+          className={`absolute top-[52.4vh] flex flex-col gap-4 ${
             open ? "" : "pointer-events-none"
           }`}
           variants={popUpParentLink}
@@ -64,11 +64,14 @@ const Navbar = () => {
         >
           {social.map((item) => {
             return (
-              <motion.div key={item.name} className={`w-full overflow-hidden`}>
+              <motion.div
+                key={item.name}
+                className={`w-full overflow-hidden`}
+                variants={popUpLink}
+              >
                 <motion.a
                   href="#"
                   className="cursor-pointer text-lg font-extralight tracking-wider"
-                  variants={popUpLink}
                 >
                   {item.name}
                 </motion.a>
@@ -101,7 +104,7 @@ const Navbar = () => {
       <motion.div
         onMouseEnter={mouseScaleUp}
         onMouseLeave={mouseDefault}
-        className="group z-10 flex cursor-pointer items-center justify-center"
+        className="group z-10 lg:flex hidden cursor-pointer items-center justify-center"
       >
         <div className="bg-circle z-1 absolute mr-20 h-12 w-[3rem] rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8rem]"></div>
         <h1 className="z-10 font-saira text-xl tracking-wide">Contact Me</h1>

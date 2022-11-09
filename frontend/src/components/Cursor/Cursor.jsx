@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { cursorAnimation } from "../../animation";
-import { useGlobalContext } from "../Context/useContext";
+import { useGlobalContext } from "../Context/ContextProvider";
 
 const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({

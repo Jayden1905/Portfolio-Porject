@@ -11,7 +11,7 @@ import {
 
 import { Navbar } from "./components";
 import Cursor from "./components/Cursor/Cursor";
-import ContextProvider from "./components/Context/useContext";
+import ContextProvider from "./components/Context/ContextProvider";
 
 const App = () => {
   return (
