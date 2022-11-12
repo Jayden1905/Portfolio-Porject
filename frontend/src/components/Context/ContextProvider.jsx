@@ -31,11 +31,11 @@ const ContextProvider = ({ children }) => {
   return (
     <globalState.Provider
       value={{
+        mouseVarient,
+        mouseDefault,
         mouseScaleUp,
         mouseChangeBackground,
         mouseSocialLinks,
-        mouseDefault,
-        mouseVarient,
       }}
     >
       {children}

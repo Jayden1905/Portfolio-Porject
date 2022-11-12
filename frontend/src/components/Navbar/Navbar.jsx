@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   hamburgerButtom,
@@ -20,7 +20,6 @@ const Navbar = () => {
     mouseSocialLinks,
   } = useGlobalContext();
   const [open, setOpen] = useState(false);
-  console.log("hello");
 
   const social = [
     {
@@ -46,14 +45,14 @@ const Navbar = () => {
       ></motion.div>
       <div className="z-10 mr-5 sm:mr-[13rem]">
         <motion.a
-          className="mr-5 font-saira text-4xl tracking-widest"
+          className="mr-5 font-saira cursor-pointer text-[1.8rem] tracking-widest"
           onMouseEnter={mouseScaleUp}
           onMouseLeave={mouseDefault}
         >
           JAYDEN
         </motion.a>
         <motion.div
-          className={`absolute top-[52.4vh] flex flex-col gap-4 ${
+          className={`absolute top-[52.3vh] flex flex-col gap-4 ${
             open ? "" : "pointer-events-none"
           }`}
           variants={popUpParentLink}
@@ -89,14 +88,13 @@ const Navbar = () => {
         >
           <motion.div
             variants={hamburgerTop}
-            animate={open ? "open" : "close"}
-            whileHover="hover"
-            className="h-[3px] w-10 cursor-pointer bg-primary"
+            animate={open ? "open" : "close" && "animate"}
+            className="h-[1px] cursor-pointer bg-primary"
           ></motion.div>
           <motion.div
             variants={hamburgerButtom}
-            animate={open ? "open" : "close"}
-            className="h-[3px] w-10 translate-x-10 cursor-pointer bg-primary"
+            animate={open ? "open" : "close" && "animate"}
+            className="h-[1px] cursor-pointer bg-primary"
           ></motion.div>
         </div>
         {navigation(mouseChangeBackground, mouseDefault, open)}
@@ -134,9 +132,12 @@ const Navbar = () => {
       >
         {items.map((item) => {
           return (
-            <motion.div key={item.id} className="h-full w-full overflow-hidden">
+            <motion.div
+              key={item.id}
+              className="h-full w-[20rem] cursor-pointer overflow-hidden hover:pl-6 transition-all duration-500"
+            >
               <motion.li
-                className="cursor-pointer transition-all duration-500 hover:ml-6"
+                className="transition-all duration-500"
                 variants={popUp}
               >
                 <motion.p

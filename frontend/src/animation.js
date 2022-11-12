@@ -65,6 +65,7 @@ export const popUpParentLink = {
 
 export const popUpLink = {
   open: {
+    rotateZ: "0deg",
     y: 0,
     opacity: 0.5,
     transition: {
@@ -85,13 +86,23 @@ export const popUpLink = {
 export const hamburgerTop = {
   close: {
     rotate: 0,
+    width: 0,
     translateY: 0,
     transition: {
       delay: 1.15,
     },
   },
 
+  animate: {
+    width: "3rem",
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+
   open: {
+    width: "3rem",
     rotate: 45,
     translateY: 5,
     transitinon: {
@@ -104,15 +115,26 @@ export const hamburgerTop = {
 export const hamburgerButtom = {
   close: {
     rotate: 0,
+    width: 0,
     translateY: 0,
     transition: {
       delay: 1.15,
     },
   },
 
+  animate: {
+    width: "3rem",
+    transition: {
+      duration: 0.75,
+      delay: 0.2,
+      ease: "easeOut",
+    },
+  },
+
   open: {
     rotate: -45,
     translateY: -5,
+    width: "3rem",
     transitinon: {
       duration: 0.5,
       ease: "easeOut",
