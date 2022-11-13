@@ -96,6 +96,7 @@ export const hamburgerTop = {
   animate: {
     width: "3rem",
     transition: {
+      delay: "1",
       duration: 0.75,
       ease: "easeOut",
     },
@@ -126,14 +127,14 @@ export const hamburgerButtom = {
     width: "3rem",
     transition: {
       duration: 0.75,
-      delay: 0.2,
+      delay: 1.4,
       ease: "easeOut",
     },
   },
 
   open: {
     rotate: -45,
-    translateY: -5,
+    translateY: -6,
     width: "3rem",
     transitinon: {
       duration: 0.5,
@@ -180,14 +181,79 @@ export const cursorAnimation = (mousePosition) => {
       ...mouseMoveTracker(mousePosition),
       scale: 1.5,
       backgroundColor: "white",
-      border: 0,
       mixBlendMode: "difference",
     },
-    socialLinks: {
+    scaleUpBlur: {
       ...mouseMoveTracker(mousePosition),
       scale: 1.5,
       backgroundColor: "rgba(255,255,255,0.2)",
-      border: 0,
+      borderColor: "rgba(255,255,255,0)",
     },
   };
+};
+
+export const logoAnim = {
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1.3,
+      ease: "easeOut",
+    },
+  },
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+};
+
+export const contactParent = {
+  show: {
+    transition: {
+      staggerChildren: 0.6,
+      delayChildren: 1.9,
+      when: "beforeChildren",
+    },
+  },
+
+  hidden: {
+    transition: {
+      staggerChildren: 0.6,
+      staggerDirection: -1,
+      when: "afterChildren",
+    },
+  },
+};
+
+export const contactAnim = {
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1.5,
+      ease: "easeOut",
+    },
+  },
+
+  hidden: {
+    x: -10,
+    opacity: 0,
+  },
+};
+
+export const showContent = {
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.5,
+      delay: 2.3,
+      ease: "easeOut",
+    },
+  },
+
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
 };

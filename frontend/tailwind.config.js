@@ -6,8 +6,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        luxurious: ["Luxurious Roman"],
-        work: ["Work Sans"],
         saira: ["Saira Condensed"],
       },
       colors: {

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import {
   About,
@@ -12,6 +13,7 @@ import {
 import { Navbar } from "./components";
 import Cursor from "./components/Cursor/Cursor";
 import ContextProvider from "./components/Context/ContextProvider";
+import { showContent } from "./animation";
 
 const App = () => {
   return (
@@ -19,12 +21,14 @@ const App = () => {
       <div className="relative flex min-h-screen w-full flex-col bg-dark text-white">
         <Cursor />
         <Navbar />
-        <Header />
-        <About />
-        <Works />
-        <Skills />
-        <Testimonials />
-        <Footer />
+        <motion.div variants={showContent} initial="hidden" animate="show">
+          <Header />
+          <About />
+          <Works />
+          <Skills />
+          <Testimonials />
+          <Footer />
+        </motion.div>
       </div>
     </ContextProvider>
   );

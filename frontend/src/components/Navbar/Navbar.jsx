@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
+  contactAnim,
+  contactParent,
   hamburgerButtom,
   hamburgerTop,
+  logoAnim,
   navBarAnimation,
   popUp,
   popUpLink,
@@ -10,7 +13,6 @@ import {
   popUpParentLink,
 } from "../../animation";
 import { useGlobalContext } from "../Context/ContextProvider";
-import facebook from "../../assets/icons8-facebook.svg";
 
 const Navbar = () => {
   const {
@@ -22,10 +24,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const social = [
-    {
-      name: "Facebook",
-      svg: facebook,
-    },
     { name: "Instagram" },
     { name: "YouTube" },
     { name: "Git Hub" },
@@ -36,21 +34,30 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky flex w-full items-center justify-center py-20 px-[10rem]">
+    <div className="sticky flex w-full items-center justify-center py-20 px-40">
       <motion.div
         className="absolute top-0 w-screen bg-secondary transition-all duration-200 ease-linear"
         variants={navBarAnimation}
         initial="hidden"
         animate={open ? "show" : "hidden"}
       ></motion.div>
-      <div className="z-10 mr-5 sm:mr-[13rem]">
-        <motion.a
-          className="mr-5 font-saira cursor-pointer text-[1.8rem] tracking-widest"
-          onMouseEnter={mouseScaleUp}
-          onMouseLeave={mouseDefault}
-        >
-          JAYDEN
-        </motion.a>
+      <div className="z-10 mr-5 sm:mr-[8rem]">
+        <div className="h-full w-full overflow-hidden">
+          <motion.div variants={logoAnim} initial="hidden" animate="show">
+            <motion.a
+              className="mr-5 font-saira flex cursor-pointer text-[1.8rem] tracking-widest"
+              onMouseEnter={mouseSocialLinks}
+              onMouseLeave={mouseDefault}
+            >
+              <span>J</span>
+              <span>A</span>
+              <span>Y</span>
+              <span>D</span>
+              <span>E</span>
+              <span>N</span>
+            </motion.a>
+          </motion.div>
+        </div>
         <motion.div
           className={`absolute top-[52.3vh] flex flex-col gap-4 ${
             open ? "" : "pointer-events-none"
@@ -83,7 +90,7 @@ const Navbar = () => {
         <div
           onMouseEnter={mouseScaleUp}
           onMouseLeave={mouseDefault}
-          className="hamburger flex cursor-pointer flex-col gap-2 p-4"
+          className="hamburger flex cursor-pointer flex-col gap-[10px] p-4"
           onClick={navToggle}
         >
           <motion.div
@@ -100,12 +107,23 @@ const Navbar = () => {
         {navigation(mouseChangeBackground, mouseDefault, open)}
       </div>
       <motion.div
-        onMouseEnter={mouseScaleUp}
+        onMouseEnter={mouseSocialLinks}
         onMouseLeave={mouseDefault}
         className="group z-10 lg:flex hidden cursor-pointer items-center justify-center"
+        variants={contactParent}
+        initial="hidden"
+        animate="show"
       >
-        <div className="bg-circle z-1 absolute mr-20 h-12 w-[3rem] rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8rem]"></div>
-        <h1 className="z-10 font-saira text-xl tracking-wide">Contact Me</h1>
+        <motion.div
+          className="bg-circle z-1 absolute mr-20 h-14 w-14 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-2 group-hover:w-[8rem]"
+          variants={contactAnim}
+        ></motion.div>
+        <motion.h1
+          className="z-10 font-saira text-xl ml-1 tracking-wider transition-all"
+          variants={contactAnim}
+        >
+          Contact Me
+        </motion.h1>
       </motion.div>
     </div>
   );
@@ -123,7 +141,7 @@ const Navbar = () => {
       <motion.ul
         className={`nav-menu ${
           open ? "" : "pointer-events-none"
-        } absolute top-[150%] z-10 flex flex-col gap-10`}
+        } absolute top-[150%] z-10 ml-8 sm:ml-8 flex flex-col gap-10`}
         variants={popUpParent}
         initial="close"
         animate={open ? "open" : "close"}

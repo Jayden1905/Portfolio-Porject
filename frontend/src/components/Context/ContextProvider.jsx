@@ -21,7 +21,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const mouseSocialLinks = () => {
-    setMouseVarient("socialLinks");
+    setMouseVarient("scaleUpBlur");
   };
 
   const mouseDefault = () => {
