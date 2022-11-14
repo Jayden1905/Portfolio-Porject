@@ -21,7 +21,12 @@ const App = () => {
       <div className="relative flex min-h-screen w-full flex-col bg-dark text-white">
         <Cursor />
         <Navbar />
-        <motion.div variants={showContent} initial="hidden" animate="show">
+        <motion.div
+          variants={showContent}
+          initial="hidden"
+          animate="show"
+          className="px-20"
+        >
           <Header />
           <About />
           <Works />

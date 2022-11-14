@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 
 import { createContext, useState } from "react";
@@ -11,6 +11,25 @@ export function useGlobalContext() {
 
 const ContextProvider = ({ children }) => {
   const [mouseVarient, setMouseVarient] = useState("default");
+  const [windowDimension, setWindowDimension] = useState({
+    windowWidth: window.innerWidth,
+    windowHeight: window.innerHeight,
+  });
+
+  const detectWindowSize = () => {
+    setWindowDimension({
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", detectWindowSize);
+
+    return () => {
+      window.removeEventListener("resize", detectWindowSize);
+    };
+  }, [windowDimension]);
 
   const mouseScaleUp = () => {
     setMouseVarient("scaleUp");
@@ -36,6 +55,7 @@ const ContextProvider = ({ children }) => {
         mouseScaleUp,
         mouseChangeBackground,
         mouseSocialLinks,
+        windowDimension,
       }}
     >
       {children}

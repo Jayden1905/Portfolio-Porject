@@ -1,16 +1,3 @@
-export const navBarAnimation = {
-  hidden: {
-    height: 0,
-    transition: {
-      delay: 1,
-    },
-  },
-
-  show: {
-    height: "75vh",
-  },
-};
-
 export const popUpParent = {
   open: {
     opacity: 1,
@@ -247,7 +234,7 @@ export const showContent = {
     y: 0,
     transition: {
       duration: 1.5,
-      delay: 2.3,
+      delay: 2,
       ease: "easeOut",
     },
   },
