@@ -188,6 +188,7 @@ export const logoAnim = {
       ease: "easeOut",
     },
   },
+
   hidden: {
     y: 50,
     opacity: 0,
@@ -242,5 +243,21 @@ export const showContent = {
   hidden: {
     opacity: 0,
     y: 50,
+  },
+};
+
+export const textAnimParent = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 1.5,
+    },
+  },
+};
+
+export const textAnim = {
+  visible: {
+    rotateY: "360deg",
   },
 };

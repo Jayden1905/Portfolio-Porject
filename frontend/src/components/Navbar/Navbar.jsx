@@ -10,6 +10,8 @@ import {
   popUpLink,
   popUpParent,
   popUpParentLink,
+  textAnim,
+  textAnimParent,
 } from "../../animation";
 import { useGlobalContext } from "../Context/ContextProvider";
 
@@ -30,14 +32,16 @@ const Navbar = () => {
     { name: "Git Hub" },
   ];
 
+  const logo = ["Y", "O", "U", "N", "G", "D", "E", "V"];
+
   const navToggle = () => {
     setOpen((prev) => !prev);
   };
 
   return (
-    <div className="sticky flex w-full items-center lg:justify-center justify-between py-20 px-20">
+    <div className="sticky flex w-full items-center justify-between py-20 px-20 lg:justify-center">
       <motion.div
-        className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-200 ease-linear`}
+        className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-700 ease-out`}
         initial={{
           height: 0,
           transition: {
@@ -47,7 +51,7 @@ const Navbar = () => {
         animate={
           open
             ? {
-                height: windowDimension.windowWidth > 1024 ? "75vh" : "100vh",
+                height: windowDimension.windowWidth > 1024 ? "48rem" : "100vh",
               }
             : {
                 height: 0,
@@ -60,22 +64,34 @@ const Navbar = () => {
       <div className="z-10 mr-0 lg:mr-[8rem]">
         <div className="h-full w-full overflow-hidden">
           <motion.div variants={logoAnim} initial="hidden" animate="show">
-            <motion.a
-              className="mr-5 font-saira flex cursor-pointer text-4xl tracking-widest"
+            <motion.div
+              className="mr-5 flex cursor-pointer font-saira text-4xl tracking-widest"
               onMouseEnter={mouseSocialLinks}
               onMouseLeave={mouseDefault}
+              variants={textAnimParent}
+              initial="hidden"
+              animate="visible"
             >
-              <span>J</span>
-              <span>A</span>
-              <span>Y</span>
-              <span>D</span>
-              <span>E</span>
-              <span>N</span>
-            </motion.a>
+              {logo.map((word, index) => (
+                <motion.span
+                  className="text-3xl"
+                  variants={textAnim}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1,
+                    repeatType: "loop",
+                    repeatDelay: 4,
+                  }}
+                  key={index}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
         <motion.div
-          className={`absolute lg:top-[52.3vh] top-[80vh] flex flex-col lg:gap-4 gap-2 ${
+          className={`absolute top-[80vh] flex flex-col gap-2 lg:top-[31.7rem] lg:gap-4 ${
             open ? "" : "pointer-events-none"
           }`}
           variants={popUpParentLink}
@@ -84,16 +100,16 @@ const Navbar = () => {
           initial="close"
           animate={open ? "open" : "close"}
         >
-          {social.map((item) => {
+          {social.map((item, index) => {
             return (
               <motion.div
-                key={item.name}
+                key={index}
                 className={`w-full overflow-hidden`}
                 variants={popUpLink}
               >
                 <motion.a
                   href="#"
-                  className="cursor-pointer lg:text-lg text-sm font-extralight tracking-wider"
+                  className="cursor-pointer text-sm font-extralight tracking-wider lg:text-lg"
                 >
                   {item.name}
                 </motion.a>
@@ -125,7 +141,7 @@ const Navbar = () => {
       <motion.div
         onMouseEnter={mouseSocialLinks}
         onMouseLeave={mouseDefault}
-        className="group z-10 ml-auto lg:flex hidden cursor-pointer items-center justify-center"
+        className="group z-10 ml-auto hidden cursor-pointer items-center justify-center lg:flex"
         variants={contactParent}
         initial="hidden"
         animate="show"
@@ -135,7 +151,7 @@ const Navbar = () => {
           variants={contactAnim}
         ></motion.div>
         <motion.h1
-          className="z-10 font-saira text-lg ml-1 tracking-wider transition-all duration-100 ease-out"
+          className="z-10 ml-1 font-saira text-lg tracking-wider transition-all duration-100 ease-out"
           variants={contactAnim}
         >
           Contact Me
@@ -146,36 +162,36 @@ const Navbar = () => {
 
   function navigation(mouseChangeBackground, mouseDefault, open) {
     const items = [
-      { name: "About me", id: 1, hoverState: false },
-      { name: "Skill set", id: 2, hoverState: false },
-      { name: "Projects", id: 3, hoverState: false },
-      { name: "Hire me", id: 4, hoverState: false },
-      { name: "Contact me", id: 5, hoverState: false },
+      { name: "About me" },
+      { name: "Skill set" },
+      { name: "Projects" },
+      { name: "Hire me" },
+      { name: "Contact me" },
     ];
 
     return (
       <motion.ul
         className={`nav-menu ${
-          open ? "" : "pointer-events-none"
-        } absolute lg:top-[150%] top-[100%] z-10 left-20 lg:left-[23.2rem] flex flex-col lg:gap-10 gap-4`}
+          open ? " " : "pointer-events-none"
+        } absolute top-[100%] left-20 z-10 flex flex-col gap-4 lg:top-[150%] lg:left-[25.5rem] lg:gap-10`}
         variants={popUpParent}
         initial="close"
         animate={open ? "open" : "close"}
         onMouseEnter={mouseChangeBackground}
         onMouseLeave={mouseDefault}
       >
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <motion.div
-              key={item.id}
-              className="h-full w-[20rem] cursor-pointer overflow-hidden hover:pl-6 transition-all duration-500"
+              key={index}
+              className="h-full w-[20rem] cursor-pointer overflow-hidden transition-all duration-500 hover:pl-6"
             >
               <motion.li
                 className="transition-all duration-500"
                 variants={popUp}
               >
                 <motion.p
-                  className={`font-saira lg:text-4xl text-3xl tracking-wider ${item.id}`}
+                  className={`font-saira text-3xl tracking-wider lg:text-4xl ${item.id}`}
                 >
                   {item.name}
                 </motion.p>
