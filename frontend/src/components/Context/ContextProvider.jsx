@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useContext } from "react";
-
 import { createContext, useState } from "react";
 
 export const globalState = createContext({});
