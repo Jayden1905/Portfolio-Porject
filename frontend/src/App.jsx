@@ -25,7 +25,7 @@ const App = () => {
           variants={showContent}
           initial="hidden"
           animate="show"
-          className="px-20"
+          className="px-16"
         >
           <Header />
           <About />

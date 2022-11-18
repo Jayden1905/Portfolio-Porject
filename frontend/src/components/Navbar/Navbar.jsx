@@ -9,7 +9,7 @@ import {
 import { useGlobalContext } from "../Context/ContextProvider";
 import Logo from "../Logo/Logo";
 import NavItems from "./NavItems";
-import Social from "./Socail";
+import Social from "./Social";
 
 const Navbar = () => {
   const { mouseDefault, mouseScaleUp, mouseSocialLinks, windowDimension } =
@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky flex w-full items-center justify-between py-20 px-20 lg:justify-center">
+    <div className="sticky flex w-full items-center justify-between p-16 lg:justify-center">
       <motion.div
         className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-700 ease-out`}
         initial={{
@@ -33,7 +33,7 @@ const Navbar = () => {
         animate={
           open
             ? {
-                height: windowDimension.windowWidth > 1024 ? "50rem" : "100vh",
+                height: windowDimension.windowWidth > 1024 ? "44rem" : "100vh",
               }
             : {
                 height: 0,
@@ -50,7 +50,7 @@ const Navbar = () => {
         <Social open={open} />
       </div>
       <div className="z-10">
-        <div
+        <motion.div
           onMouseEnter={mouseScaleUp}
           onMouseLeave={mouseDefault}
           className="hamburger flex cursor-pointer flex-col gap-[10px] p-4"
@@ -66,7 +66,7 @@ const Navbar = () => {
             animate={open ? "open" : "close" && "animate"}
             className="h-[1px] cursor-pointer bg-primary"
           ></motion.div>
-        </div>
+        </motion.div>
         <NavItems open={open} />
       </div>
       <motion.div
@@ -78,7 +78,7 @@ const Navbar = () => {
         animate="show"
       >
         <motion.div
-          className="bg-circle z-1 absolute mr-20 h-12 w-12 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8rem]"
+          className="bg-circle absolute mr-20 h-12 w-12 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8rem]"
           variants={contactAnim}
         ></motion.div>
         <motion.h1

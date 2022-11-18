@@ -11,7 +11,7 @@ export default function Logo() {
     <motion.div variants={logoAnim} initial="hidden" animate="show">
       <motion.a
         href="#"
-        className="mr-5 flex cursor-pointer font-saira text-4xl tracking-widest"
+        className="mr-5 flex cursor-pointer font-saira text-4xl tracking-wider"
         onMouseEnter={mouseSocialLinks}
         onMouseLeave={mouseDefault}
         variants={textAnimParent}
