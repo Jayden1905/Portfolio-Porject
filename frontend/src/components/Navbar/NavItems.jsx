@@ -2,16 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 import { popUpParent, popUp } from "../../animation";
 import { useGlobalContext } from "../Context/ContextProvider";
+import { Link } from "react-router-dom";
 
-export default function NavItems({ open }) {
+export default function NavItems({ open, setOpen, setCloseDelay }) {
   const { mouseChangeBackground, mouseDefault } = useGlobalContext();
   const items = [
-    { name: "About me" },
-    { name: "Skill set" },
-    { name: "Projects" },
-    { name: "Hire me" },
-    { name: "Contact me" },
+    { name: "Home", route: "/" },
+    { name: "About me", route: "/" },
+    { name: "Skills", route: "/" },
+    { name: "Projects", route: "/works" },
+    { name: "Contact me", route: "/" },
   ];
+
+  const closeNavHandler = () => {
+    setOpen((prev) => !prev);
+    open ? setCloseDelay(true) : setCloseDelay(false);
+  };
 
   return (
     <motion.ul
@@ -28,13 +34,14 @@ export default function NavItems({ open }) {
         return (
           <motion.div
             key={index}
+            onClick={closeNavHandler}
             className="h-full w-[20rem] cursor-pointer overflow-hidden transition-all duration-500 hover:pl-6"
           >
             <motion.li className="transition-all duration-500" variants={popUp}>
               <motion.p
                 className={`font-saira text-3xl tracking-wider lg:text-4xl ${item.id}`}
               >
-                {item.name}
+                <Link to={item.route}>{item.name}</Link>
               </motion.p>
             </motion.li>
           </motion.div>

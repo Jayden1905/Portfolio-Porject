@@ -83,7 +83,7 @@ export const hamburgerTop = {
   animate: {
     width: "3rem",
     transition: {
-      delay: "1",
+      delay: 0.9,
       duration: 0.75,
       ease: "easeOut",
     },

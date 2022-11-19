@@ -15,9 +15,11 @@ const Navbar = () => {
   const { mouseDefault, mouseScaleUp, mouseSocialLinks, windowDimension } =
     useGlobalContext();
   const [open, setOpen] = useState(false);
+  const [closeDelay, setCloseDelay] = useState(false);
 
   const navToggle = () => {
     setOpen((prev) => !prev);
+    open ? setCloseDelay(true) : setCloseDelay(false);
   };
 
   return (
@@ -58,16 +60,32 @@ const Navbar = () => {
         >
           <motion.div
             variants={hamburgerTop}
-            animate={open ? "open" : "close" && "animate"}
-            className="h-[1px] cursor-pointer bg-primary"
+            animate="animate"
+            className={`h-[1px] w-0 cursor-pointer bg-primary ${
+              open
+                ? "rotate-[45deg] translate-y-[5px] transition-all duration-300 ease-out"
+                : ""
+            } ${
+              closeDelay
+                ? "transition-all duration-300 ease-out delay-[1.15s]"
+                : ""
+            }`}
           ></motion.div>
           <motion.div
             variants={hamburgerButtom}
-            animate={open ? "open" : "close" && "animate"}
-            className="h-[1px] cursor-pointer bg-primary"
+            animate="animate"
+            className={`h-[1px] w-0 cursor-pointer bg-primary ${
+              open
+                ? "rotate-[-45deg] translate-y-[-6px] transition-all duration-300 ease-out"
+                : ""
+            } ${
+              closeDelay
+                ? "transition-all duration-300 ease-out delay-[1.15s]"
+                : ""
+            }`}
           ></motion.div>
         </motion.div>
-        <NavItems open={open} />
+        <NavItems open={open} setOpen={setOpen} setCloseDelay={setCloseDelay} />
       </div>
       <motion.div
         onMouseEnter={mouseSocialLinks}
@@ -82,7 +100,7 @@ const Navbar = () => {
           variants={contactAnim}
         ></motion.div>
         <motion.h1
-          className="z-10 ml-1 font-saira text-lg tracking-wider transition-all duration-100 ease-out"
+          className="z-10 ml-1 font-saira text-md tracking-wider transition-all duration-100 ease-out"
           variants={contactAnim}
         >
           Contact Me
