@@ -23,7 +23,7 @@ export default function NavItems({ open, setOpen, setCloseDelay }) {
     <motion.ul
       className={`nav-menu ${
         open ? " " : "pointer-events-none"
-      } absolute top-[100%] left-16 z-10 flex flex-col gap-4 lg:top-[150%] lg:left-[24.5rem] lg:gap-10`}
+      } absolute top-[100%] left-20 z-10 flex flex-col gap-4 lg:top-[150%] lg:left-[26rem] lg:gap-10`}
       variants={popUpParent}
       initial="close"
       animate={open ? "open" : "close"}

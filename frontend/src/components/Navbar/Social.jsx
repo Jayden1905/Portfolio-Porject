@@ -14,7 +14,7 @@ export default function Social({ open }) {
 
   return (
     <motion.div
-      className={`absolute top-[80vh] flex flex-col gap-2 lg:top-[28.7rem] lg:gap-4 ${
+      className={`absolute top-[80vh] flex flex-col gap-2 lg:top-[31.7rem] lg:gap-4 ${
         open ? "" : "pointer-events-none"
       }`}
       variants={popUpParentLink}

@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky flex w-full items-center justify-between p-16 lg:justify-center">
+    <div className="sticky z-40 flex w-full items-center justify-between p-20 lg:justify-center">
       <motion.div
         className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-700 ease-out`}
         initial={{
@@ -35,7 +35,7 @@ const Navbar = () => {
         animate={
           open
             ? {
-                height: windowDimension.windowWidth > 1024 ? "44rem" : "100vh",
+                height: windowDimension.windowWidth > 1024 ? "47rem" : "100vh",
               }
             : {
                 height: 0,
@@ -96,11 +96,11 @@ const Navbar = () => {
         animate="show"
       >
         <motion.div
-          className="bg-circle absolute mr-20 h-12 w-12 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8rem]"
+          className="bg-circle absolute mr-20 h-14 w-14 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8.5rem]"
           variants={contactAnim}
         ></motion.div>
         <motion.h1
-          className="z-10 ml-1 font-saira text-md tracking-wider transition-all duration-100 ease-out"
+          className="z-10 ml-1 font-saira text-md transition-all duration-100 tracking-tight ease-out group-hover:!opacity-100"
           variants={contactAnim}
         >
           Contact Me
