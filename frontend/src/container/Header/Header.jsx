@@ -41,7 +41,7 @@ const Header = () => {
             animate="show"
             whileHover={{ color: "black" }}
             href="#"
-            className="circle cursor-pointer bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
+            className="circle md:ml-[13%] ml-0 cursor-pointer bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
           >
             <motion.div
               variants={aboutMeBtn}
@@ -54,7 +54,7 @@ const Header = () => {
           </motion.a>
           <motion.p
             variants={introAnim}
-            className="select-none xl:w-[35%] lg:w-[45%] sm:w-[60%] w-full font-saira_light tracking-wide leading-7"
+            className="select-none xl:w-[35%] lg:w-[45%] sm:w-[50%] w-full font-saira_light tracking-wide leading-7"
           >
             My name is Kyaw Za Yan Naing and people called me Jayden. I am a
             frontend web-developer and a full-time student based in Myanmar.
