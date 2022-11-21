@@ -19,3 +19,8 @@ body {
   font-family: "Saira Condensed";
   src: url("./assets/fonts/Saira.ttf");
 }
+
+@font-face {
+  font-family: "Saira Condensed Light";
+  src: url("./assets/fonts/Saira-ExtraLight.ttf");
+}

@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         saira: ["Saira Condensed"],
+        saira_light: ["Saira Condensed Light"],
       },
       colors: {
         primary: "#feffff",

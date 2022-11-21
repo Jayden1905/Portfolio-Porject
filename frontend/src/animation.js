@@ -199,7 +199,7 @@ export const contactParent = {
   show: {
     transition: {
       staggerChildren: 0.6,
-      delayChildren: 1.9,
+      delayChildren: 1,
       when: "beforeChildren",
     },
   },
@@ -232,17 +232,15 @@ export const contactAnim = {
 export const showContent = {
   show: {
     opacity: 1,
-    y: 0,
     transition: {
       duration: 1.5,
-      delay: 2,
       ease: "easeOut",
+      staggerChildren: 0.75,
     },
   },
 
   hidden: {
     opacity: 0,
-    y: 50,
   },
 };
 
@@ -259,5 +257,70 @@ export const textAnimParent = {
 export const textAnim = {
   visible: {
     rotateY: "360deg",
+  },
+};
+
+export const aboutMeBtn = {
+  initial: {
+    opacity: 0,
+  },
+
+  animate: {
+    opacity: 1,
+    scale: 40,
+
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const titleAnim = {
+  hidden: {
+    y: 180,
+  },
+
+  show: {
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const introAnim = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const circle = {
+  hidden: {
+    opacity: 0,
+    x: -20,
+    y: 20,
+  },
+
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.75,
+      delay: 1,
+      ease: "easeOut",
+    },
   },
 };
