@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky z-40 flex w-full items-center justify-between sm:p-20 p-10 lg:justify-center">
+    <div className="sticky z-40 flex w-screen items-center justify-between sm:p-20 p-10 lg:justify-center">
       <motion.div
         className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-700 ease-out`}
         initial={{

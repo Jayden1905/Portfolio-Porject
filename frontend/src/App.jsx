@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router";
 const App = () => {
   return (
     <ContextProvider>
-      <div className="relative flex min-h-screen w-full flex-col bg-dark text-white">
+      <div className="relative flex min-h-screen w-screen flex-col bg-dark text-white">
         <Cursor />
         <Navbar />
         <Routes>

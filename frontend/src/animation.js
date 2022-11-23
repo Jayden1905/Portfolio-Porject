@@ -235,7 +235,7 @@ export const showContent = {
     transition: {
       duration: 1.5,
       ease: "easeOut",
-      staggerChildren: 0.75,
+      staggerChildren: 1.2,
     },
   },
 
@@ -284,7 +284,7 @@ export const titleAnim = {
   show: {
     y: 0,
     transition: {
-      duration: 1,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -300,7 +300,7 @@ export const introAnim = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -318,7 +318,7 @@ export const circle = {
     x: 0,
     y: 0,
     transition: {
-      duration: 0.75,
+      duration: 1.5,
       delay: 1,
       ease: "easeOut",
     },

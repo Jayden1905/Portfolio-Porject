@@ -12,8 +12,8 @@ const Header = () => {
   };
 
   return (
-    <motion.div className="flex w-full h-[74vh] justify-center items-center">
-      <div className="flex flex-col sm:gap-28 gap-36 justify-center items-center">
+    <motion.div className="flex w-screen h-[55vh] justify-center items-center">
+      <div className="flex flex-col gap-10 justify-center items-center">
         <motion.div className="flex flex-col sm:items-start items-center justify-center sm:gap-0 gap-6">
           <div className="overflow-hidden">
             <motion.h1
@@ -32,7 +32,7 @@ const Header = () => {
             </motion.h1>
           </div>
         </motion.div>
-        <div className="about-me flex justify-between">
+        <div className="about-me flex justify-between relative top-32">
           <motion.a
             onMouseEnter={hoverHandler}
             onMouseLeave={hoverHandler}

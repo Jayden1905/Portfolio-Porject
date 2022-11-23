@@ -9,7 +9,7 @@ export default function Home() {
       variants={showContent}
       initial="hidden"
       animate="show"
-      className="sm:px-24 px-10 w-full h-100vh flex justify-center items-center"
+      className="sm:px-24 px-10 w-screen h-100vh flex justify-center items-center"
     >
       <Header />
     </motion.div>
