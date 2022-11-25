@@ -16,6 +16,22 @@ export const popUpParent = {
   },
 };
 
+export const oddinary = {
+  open: {
+    y: 0,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+
+  close: {
+    y: 50,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+
 export const popUp = {
   open: {
     y: 0,
@@ -76,14 +92,14 @@ export const hamburgerTop = {
     width: 0,
     translateY: 0,
     transition: {
-      delay: 1.15,
+      delay: 1.1,
     },
   },
 
   animate: {
     width: "3rem",
     transition: {
-      delay: 0.9,
+      delay: 0.6,
       duration: 0.75,
       ease: "easeOut",
     },
@@ -114,7 +130,7 @@ export const hamburgerButtom = {
     width: "3rem",
     transition: {
       duration: 0.75,
-      delay: 1.4,
+      delay: 0.8,
       ease: "easeOut",
     },
   },
@@ -198,15 +214,15 @@ export const logoAnim = {
 export const contactParent = {
   show: {
     transition: {
-      staggerChildren: 0.6,
-      delayChildren: 1,
+      staggerChildren: 0.3,
+      delayChildren: 0.5,
       when: "beforeChildren",
     },
   },
 
   hidden: {
     transition: {
-      staggerChildren: 0.6,
+      staggerChildren: 0.3,
       staggerDirection: -1,
       when: "afterChildren",
     },
@@ -218,7 +234,7 @@ export const contactAnim = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1.5,
+      duration: 0.5,
       ease: "easeOut",
     },
   },
@@ -235,7 +251,7 @@ export const showContent = {
     transition: {
       duration: 1.5,
       ease: "easeOut",
-      staggerChildren: 1.2,
+      staggerChildren: 0.4,
     },
   },
 
@@ -290,6 +306,43 @@ export const titleAnim = {
   },
 };
 
+export const waveContainer = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: () => ({
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      staggerChildren: 0.05,
+      delayChildren: 0.5,
+    },
+  }),
+};
+
+export const waveAnim = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 2,
+      type: "spring",
+      damping: 10,
+      stiffness: 200,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      duration: 1.5,
+      type: "spring",
+      damping: 10,
+      stiffness: 200,
+    },
+  },
+};
+
 export const introAnim = {
   hidden: {
     opacity: 0,
@@ -300,7 +353,7 @@ export const introAnim = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.5,
+      duration: 1.3,
       ease: "easeOut",
     },
   },
@@ -308,18 +361,14 @@ export const introAnim = {
 
 export const circle = {
   hidden: {
-    opacity: 0,
-    x: -20,
-    y: 20,
+    scale: 0,
   },
 
   show: {
-    opacity: 1,
-    x: 0,
-    y: 0,
+    scale: 1,
     transition: {
-      duration: 1.5,
-      delay: 1,
+      duration: 0.65,
+      delay: 1.6,
       ease: "easeOut",
     },
   },

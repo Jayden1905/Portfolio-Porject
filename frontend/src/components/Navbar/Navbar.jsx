@@ -5,6 +5,7 @@ import {
   contactParent,
   hamburgerButtom,
   hamburgerTop,
+  oddinary,
 } from "../../animation";
 import { useGlobalContext } from "../Context/ContextProvider";
 import Logo from "../Logo/Logo";
@@ -100,11 +101,22 @@ const Navbar = () => {
           variants={contactAnim}
         ></motion.div>
         <motion.h1
-          className="z-10 ml-1 font-saira text-md transition-all duration-100 tracking-tight ease-out group-hover:!opacity-100"
+          className="z-10 ml-1 font-saira !opacity-70 text-md transition-all duration-100 tracking-tight ease-out group-hover:!opacity-100"
           variants={contactAnim}
         >
           Contact Me
         </motion.h1>
+        <motion.div
+          className={`z-10 ${
+            open
+              ? "opacity-100 translate-y-0 delay-700"
+              : "opacity-0 translate-y-20 delay-300"
+          } lg:block hidden pointer-events-none absolute top-full mt-[16rem] select-none rotate-90 transition-all duration-500 ease-out`}
+        >
+          <h1 className="text text-5xl w-[25rem] font-saira tracking-widest border-white">
+            Oddinary blog!
+          </h1>
+        </motion.div>
       </motion.div>
     </div>
   );

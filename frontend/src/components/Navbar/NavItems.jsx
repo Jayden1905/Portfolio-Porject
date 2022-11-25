@@ -2,16 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { popUpParent, popUp } from "../../animation";
 import { useGlobalContext } from "../Context/ContextProvider";
-import { Link } from "react-router-dom";
 
 export default function NavItems({ open, setOpen, setCloseDelay }) {
   const { mouseChangeBackground, mouseDefault } = useGlobalContext();
   const items = [
-    { name: "Home", route: "/" },
-    { name: "About me", route: "/" },
-    { name: "Skills", route: "/" },
-    { name: "Projects", route: "/works" },
-    { name: "Contact me", route: "/" },
+    { name: "Home", hash: "#Home" },
+    { name: "About me", hash: "#About" },
+    { name: "Projects", hash: "#Works" },
+    { name: "Skills", hash: "#Skills" },
+    { name: "Contact me", hash: "#Contact" },
   ];
 
   const closeNavHandler = () => {
@@ -23,7 +22,7 @@ export default function NavItems({ open, setOpen, setCloseDelay }) {
     <motion.ul
       className={`nav-menu ${
         open ? " " : "pointer-events-none"
-      } absolute top-[100%] left-20 z-10 flex flex-col gap-4 lg:top-[150%] lg:left-[26rem] lg:gap-10`}
+      } absolute top-[120%] sm:left-20 left-10 z-10 flex flex-col gap-4 lg:top-[150%] lg:left-[26rem] lg:gap-10`}
       variants={popUpParent}
       initial="close"
       animate={open ? "open" : "close"}
@@ -41,7 +40,7 @@ export default function NavItems({ open, setOpen, setCloseDelay }) {
               <motion.p
                 className={`font-saira text-3xl tracking-wider lg:text-4xl ${item.id}`}
               >
-                <Link to={item.route}>{item.name}</Link>
+                <a href={item.hash}>{item.name}</a>
               </motion.p>
             </motion.li>
           </motion.div>

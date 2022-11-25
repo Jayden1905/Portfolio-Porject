@@ -24,3 +24,10 @@ body {
   font-family: "Saira Condensed Light";
   src: url("./assets/fonts/Saira-ExtraLight.ttf");
 }
+
+.text {
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #868686;
+  color: transparent;
+  text-decoration: none;
+}
