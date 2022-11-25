@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <motion.div className="flex w-screen h-[55vh] justify-center items-center">
+    <motion.div className="flex w-screen h-[70vh] justify-center items-center">
       <div className="flex flex-col gap-10 justify-center items-center">
         <motion.div className="flex flex-col sm:items-start items-center justify-center sm:gap-0 gap-6">
           <div className="overflow-hidden">
@@ -47,7 +47,7 @@ const Header = () => {
               variants={aboutMeBtn}
               initial="initial"
               animate={hover ? "animate" : "initial"}
-              className="w-1 h-1 absolute bg-white rounded-full"
+              className="w-1 h-1 absolute bg-white rounded-full transition-all duration-200 ease-out"
             ></motion.div>
             <p className="z-10 select-none">About me</p>
             <FontAwesomeIcon className="z-10" icon={faArrowDown} />
@@ -56,7 +56,7 @@ const Header = () => {
             variants={introAnim}
             className="select-none xl:w-[35%] lg:w-[45%] sm:w-[50%] w-full font-saira_light tracking-wide leading-7"
           >
-            My name is Kyaw Za Yan Naing and people called me Jayden. I am a
+            My name is Kyaw Za Yan Naing and my friends call me Jayden. I am a
             frontend web-developer and a full-time student based in Myanmar.
           </motion.p>
         </div>

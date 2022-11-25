@@ -35,7 +35,7 @@ const Navbar = () => {
         animate={
           open
             ? {
-                height: windowDimension.windowWidth > 1024 ? "47rem" : "100vh",
+                height: windowDimension.windowWidth > 1024 ? "51rem" : "100vh",
               }
             : {
                 height: 0,
