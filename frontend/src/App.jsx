@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Home } from "./container";
 import { Navbar } from "./components";
 import Cursor from "./components/Cursor/Cursor";
@@ -9,7 +9,7 @@ const App = () => {
     <ContextProvider>
       <div
         id="Home"
-        className="relative flex min-h-screen w-screen flex-col bg-dark text-white"
+        className="relative flex w-screen h-full flex-col text-white overflow-x-hidden"
       >
         <Cursor />
         <Navbar />

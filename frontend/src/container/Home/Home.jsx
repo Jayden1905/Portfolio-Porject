@@ -10,7 +10,7 @@ export default function Home() {
       variants={showContent}
       initial="hidden"
       animate="show"
-      className="sm:px-24 px-10 w-screen h-100vh flex flex-col justify-center items-center"
+      className=" w-screen h-full flex flex-col justify-center items-center"
     >
       <Header />
       <About />

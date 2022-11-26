@@ -245,6 +245,22 @@ export const contactAnim = {
   },
 };
 
+export const contactAnimContent = {
+  show: {
+    opacity: 0.7,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+
+  hidden: {
+    x: -10,
+    opacity: 0,
+  },
+};
+
 export const showContent = {
   show: {
     opacity: 1,
@@ -368,7 +384,22 @@ export const circle = {
     scale: 1,
     transition: {
       duration: 0.65,
-      delay: 1.6,
+      delay: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const arrow = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
       ease: "easeOut",
     },
   },

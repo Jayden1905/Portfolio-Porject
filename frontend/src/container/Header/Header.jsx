@@ -4,14 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import {
   aboutMeBtn,
+  arrow,
   circle,
-  introAnim,
   titleAnim,
   waveAnim,
   waveContainer,
 } from "../../animation";
+import { useGlobalContext } from "../../components/Context/ContextProvider";
 
 const Header = () => {
+  const { mouseScaleUp, mouseDefault } = useGlobalContext();
   const title = Array.from("websites");
   const [hover, setHover] = useState(false);
 
@@ -20,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <motion.div className="flex w-screen h-[70vh] justify-center items-center">
+    <motion.div className="sm:px-24 px-10 bg-dark flex w-screen sm:h-[78vh] h-[87vh] justify-center items-center">
       <div className="flex flex-col gap-10 justify-center items-center">
         <motion.div className="flex flex-col sm:items-start items-center justify-center sm:gap-0 gap-6">
           <div className="overflow-hidden">
@@ -44,7 +46,7 @@ const Header = () => {
             ))}
           </motion.h1>
         </motion.div>
-        <div className="about-me flex sm:justify-between justify-center relative top-32">
+        <div className="about-me w-full flex justify-center">
           <motion.a
             onMouseEnter={hoverHandler}
             onMouseLeave={hoverHandler}
@@ -52,7 +54,7 @@ const Header = () => {
             whileHover={{ color: "black" }}
             href="#About"
             style={{ originX: 0, originY: 1 }}
-            className="circle md:ml-[13%] ml-0 cursor-pointer bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
+            className="circle cursor-pointer relative top-20 bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
           >
             <motion.div
               variants={aboutMeBtn}
@@ -63,13 +65,15 @@ const Header = () => {
             <p className="z-10 select-none">About me</p>
             <FontAwesomeIcon className="z-10" icon={faArrowDown} />
           </motion.a>
-          <motion.p
-            variants={introAnim}
-            className="select-none xl:w-[35%] lg:w-[45%] sm:w-[50%] w-[80%] font-saira_light tracking-wide leading-7"
+          <motion.a
+            className="sm:hidden block cursor-pointer mt-56"
+            href="#About"
+            onMouseEnter={mouseScaleUp}
+            onMouseLeave={mouseDefault}
+            variants={arrow}
           >
-            My name is Kyaw Za Yan Naing and my friends call me Jayden. I am a
-            frontend web-developer and a full-time student based in Myanmar.
-          </motion.p>
+            <FontAwesomeIcon className="z-10 h-4" icon={faArrowDown} />
+          </motion.a>
         </div>
       </div>
     </motion.div>

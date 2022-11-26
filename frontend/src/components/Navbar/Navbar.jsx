@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   contactAnim,
+  contactAnimContent,
   contactParent,
   hamburgerButtom,
   hamburgerTop,
@@ -24,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky z-40 flex w-screen items-center justify-between sm:p-20 p-10 lg:justify-center">
+    <div className="sticky z-40 bg-dark flex w-screen items-center justify-between sm:p-20 p-10 lg:justify-center">
       <motion.div
         className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-700 ease-out`}
         initial={{
@@ -101,8 +102,8 @@ const Navbar = () => {
           variants={contactAnim}
         ></motion.div>
         <motion.h1
-          className="z-10 ml-1 font-saira !opacity-70 text-md transition-all duration-100 tracking-tight ease-out group-hover:!opacity-100"
-          variants={contactAnim}
+          className="z-10 ml-1 font-saira text-md transition-all duration-100 tracking-tight ease-out group-hover:!opacity-100"
+          variants={contactAnimContent}
         >
           Contact Me
         </motion.h1>
