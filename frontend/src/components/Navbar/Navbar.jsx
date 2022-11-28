@@ -6,7 +6,6 @@ import {
   contactParent,
   hamburgerButtom,
   hamburgerTop,
-  oddinary,
 } from "../../animation";
 import { useGlobalContext } from "../Context/ContextProvider";
 import Logo from "../Logo/Logo";
@@ -25,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky z-40 bg-dark flex items-center justify-between sm:p-20 p-10 lg:justify-center">
+    <div className="sticky z-40 flex w-full items-center justify-between bg-dark p-10 sm:p-20 lg:justify-center">
       <motion.div
         className={`absolute top-0 left-0 w-screen bg-secondary transition-all duration-700 ease-out`}
         initial={{
@@ -65,11 +64,11 @@ const Navbar = () => {
             animate="animate"
             className={`h-[1px] w-0 cursor-pointer bg-primary ${
               open
-                ? "rotate-[45deg] translate-y-[5px] transition-all duration-300 ease-out"
+                ? "translate-y-[5px] rotate-[45deg] transition-all duration-300 ease-out"
                 : ""
             } ${
               closeDelay
-                ? "transition-all duration-300 ease-out delay-[1.15s]"
+                ? "transition-all delay-[1.15s] duration-300 ease-out"
                 : ""
             }`}
           ></motion.div>
@@ -78,11 +77,11 @@ const Navbar = () => {
             animate="animate"
             className={`h-[1px] w-0 cursor-pointer bg-primary ${
               open
-                ? "rotate-[-45deg] translate-y-[-6px] transition-all duration-300 ease-out"
+                ? "translate-y-[-6px] rotate-[-45deg] transition-all duration-300 ease-out"
                 : ""
             } ${
               closeDelay
-                ? "transition-all duration-300 ease-out delay-[1.15s]"
+                ? "transition-all delay-[1.15s] duration-300 ease-out"
                 : ""
             }`}
           ></motion.div>
@@ -102,7 +101,7 @@ const Navbar = () => {
           variants={contactAnim}
         ></motion.div>
         <motion.h1
-          className="z-10 ml-1 font-saira text-md transition-all duration-100 tracking-tight ease-out group-hover:!opacity-100"
+          className="text-md z-10 ml-1 font-saira tracking-tight transition-all duration-100 ease-out group-hover:!opacity-100"
           variants={contactAnimContent}
         >
           Contact Me
@@ -110,11 +109,11 @@ const Navbar = () => {
         <motion.div
           className={`z-10 ${
             open
-              ? "opacity-100 translate-y-0 delay-700"
-              : "opacity-0 translate-y-20 delay-300"
-          } lg:block hidden pointer-events-none absolute top-full mt-[16rem] select-none rotate-90 transition-all duration-500 ease-out`}
+              ? "translate-y-0 opacity-100 delay-700"
+              : "translate-y-20 opacity-0 delay-300"
+          } pointer-events-none absolute top-full mt-[16rem] hidden rotate-90 select-none transition-all duration-500 ease-out lg:block`}
         >
-          <h1 className="text text-5xl w-[25rem] font-saira tracking-widest border-white">
+          <h1 className="text w-[25rem] border-white font-saira text-5xl tracking-widest">
             Oddinary blog!
           </h1>
         </motion.div>
