@@ -22,13 +22,13 @@ const Header = () => {
   };
 
   return (
-    <motion.div className="sm:px-24 px-10 bg-dark flex w-screen sm:h-[70vh] h-[87vh] justify-center items-center">
-      <div className="flex flex-col gap-10 justify-center items-center">
-        <motion.div className="flex flex-col sm:items-start items-center justify-center sm:gap-0 gap-6">
+    <motion.div className="flex h-[87vh] w-screen items-center justify-center bg-dark px-10 sm:h-[70vh] sm:px-24">
+      <div className="flex flex-col items-center justify-center gap-10">
+        <motion.div className="flex flex-col items-center justify-center gap-6 sm:items-start sm:gap-0">
           <div className="overflow-hidden">
             <motion.h1
               variants={titleAnim}
-              className="font-saira_light select-none tracking-wide sm:text-3xl text-2xl lg:pl-0 sm:pl-20 pl-0"
+              className="select-none pl-0 font-saira_light text-2xl tracking-wide transition-all duration-700 ease-out sm:pl-20 sm:text-3xl lg:pl-0"
             >
               I develop ideas into
             </motion.h1>
@@ -37,7 +37,7 @@ const Header = () => {
             variants={waveContainer}
             initial="hidden"
             animate="show"
-            className="flex overflow-hidden select-none font-saira_light lg:text-[12rem] sm:text-[8rem] text-[5rem] sm:leading-[12rem] leading-normal lg:pl-20"
+            className="flex select-none overflow-hidden font-saira_light text-[5rem] leading-normal sm:text-[8rem] sm:leading-[12rem] lg:pl-20 lg:text-[12rem]"
           >
             {title.map((letter, index) => (
               <motion.span key={index} variants={waveAnim}>
@@ -46,7 +46,7 @@ const Header = () => {
             ))}
           </motion.h1>
         </motion.div>
-        <div className="about-me w-full flex justify-center">
+        <div className="about-me flex w-full justify-center">
           <motion.a
             onMouseEnter={hoverHandler}
             onMouseLeave={hoverHandler}
@@ -54,19 +54,19 @@ const Header = () => {
             whileHover={{ color: "black" }}
             href="#About"
             style={{ originX: 0, originY: 1 }}
-            className="circle cursor-pointer relative top-28 bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
+            className="circle relative top-28 hidden h-40 w-40 cursor-pointer flex-col items-center justify-center gap-4 rounded-full bg-black transition-all duration-1000 ease-out sm:flex"
           >
             <motion.div
               variants={aboutMeBtn}
               initial="initial"
               animate={hover ? "animate" : "initial"}
-              className="w-1 h-1 absolute bg-white rounded-full transition-all duration-300 ease-out"
+              className="absolute h-1 w-1 rounded-full bg-white transition-all duration-500 ease-out"
             ></motion.div>
             <p className="z-10 select-none">About me</p>
             <FontAwesomeIcon className="z-10" icon={faArrowDown} />
           </motion.a>
           <motion.a
-            className="sm:hidden block cursor-pointer mt-56"
+            className="mt-56 block cursor-pointer sm:hidden"
             href="#About"
             onMouseEnter={mouseScaleUp}
             onMouseLeave={mouseDefault}

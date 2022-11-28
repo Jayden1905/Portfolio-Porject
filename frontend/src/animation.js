@@ -100,7 +100,7 @@ export const hamburgerTop = {
     width: "3rem",
     transition: {
       delay: 0.6,
-      duration: 0.75,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -129,8 +129,8 @@ export const hamburgerButtom = {
   animate: {
     width: "3rem",
     transition: {
-      duration: 0.75,
-      delay: 0.8,
+      duration: 1.5,
+      delay: 1.2,
       ease: "easeOut",
     },
   },
@@ -200,7 +200,7 @@ export const logoAnim = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1.3,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -215,7 +215,7 @@ export const contactParent = {
   show: {
     transition: {
       staggerChildren: 0.3,
-      delayChildren: 0.5,
+      delayChildren: 1.5,
       when: "beforeChildren",
     },
   },
@@ -234,7 +234,7 @@ export const contactAnim = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -250,7 +250,7 @@ export const contactAnimContent = {
     opacity: 0.7,
     x: 0,
     transition: {
-      duration: 0.5,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -267,7 +267,8 @@ export const showContent = {
     transition: {
       duration: 1.5,
       ease: "easeOut",
-      staggerChildren: 0.4,
+      staggerChildren: 1.5,
+      delayChildren: 0.5,
     },
   },
 
@@ -329,32 +330,25 @@ export const waveContainer = {
   show: () => ({
     opacity: 1,
     transition: {
-      duration: 1.5,
-      staggerChildren: 0.05,
-      delayChildren: 0.5,
+      duration: 1,
+      staggerChildren: 0.1,
+      delayChildren: 0.75,
     },
   }),
 };
 
 export const waveAnim = {
   show: {
-    opacity: 1,
     y: 0,
     transition: {
-      duration: 2,
-      type: "spring",
-      damping: 10,
-      stiffness: 200,
+      duration: 0.85,
+      ease: "easeOut",
     },
   },
   hidden: {
-    opacity: 0,
-    y: 20,
+    y: 180,
     transition: {
       duration: 1.5,
-      type: "spring",
-      damping: 10,
-      stiffness: 200,
     },
   },
 };
@@ -384,7 +378,6 @@ export const circle = {
     scale: 1,
     transition: {
       duration: 0.65,
-      delay: 0.8,
       ease: "easeOut",
     },
   },
@@ -476,6 +469,45 @@ export const aboutText = {
     transition: {
       duration: 0.75,
       ease: "easeOut",
+    },
+  },
+};
+
+export const loadingTitle = {
+  hidden: {
+    opacity: 1,
+    y: 0,
+    transitinon: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+
+  show: {
+    opacity: 0,
+    y: 180,
+    transitinon: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const topLoading = {
+  hidden: {
+    top: "0",
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+
+  show: {
+    top: "-100%",
+    transition: {
+      duration: 0.75,
+      delay: 1.6,
+      ease: "easeIn",
     },
   },
 };
