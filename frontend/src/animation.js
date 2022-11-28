@@ -326,7 +326,7 @@ export const waveContainer = {
   hidden: {
     opacity: 0,
   },
-  visible: () => ({
+  show: () => ({
     opacity: 1,
     transition: {
       duration: 1.5,
@@ -337,7 +337,7 @@ export const waveContainer = {
 };
 
 export const waveAnim = {
-  visible: {
+  show: {
     opacity: 1,
     y: 0,
     transition: {
@@ -400,6 +400,67 @@ export const arrow = {
     y: 0,
     transition: {
       duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const aboutAnimation = {
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      ease: "easeOut",
+      staggerChildren: 0.4,
+    },
+  },
+
+  hidden: {
+    opacity: 0,
+  },
+};
+
+export const aboutTitle = {
+  hidden: {
+    y: 100,
+  },
+
+  show: {
+    y: 0,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const aboutHeader = {
+  hidden: {
+    opacity: 0,
+    y: 70,
+  },
+
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.75,
+      delay: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const lineHeader = {
+  hidden: {
+    width: 0,
+  },
+
+  show: {
+    width: "100%",
+    transition: {
+      duration: 0.75,
+      delay: 0.5,
       ease: "easeOut",
     },
   },

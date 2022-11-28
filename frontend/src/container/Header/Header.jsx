@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <motion.div className="sm:px-24 px-10 bg-dark flex w-screen sm:h-[78vh] h-[87vh] justify-center items-center">
+    <motion.div className="sm:px-24 px-10 bg-dark flex w-screen sm:h-[70vh] h-[87vh] justify-center items-center">
       <div className="flex flex-col gap-10 justify-center items-center">
         <motion.div className="flex flex-col sm:items-start items-center justify-center sm:gap-0 gap-6">
           <div className="overflow-hidden">
@@ -36,7 +36,7 @@ const Header = () => {
           <motion.h1
             variants={waveContainer}
             initial="hidden"
-            animate="visible"
+            animate="show"
             className="flex overflow-hidden select-none font-saira_light lg:text-[12rem] sm:text-[8rem] text-[5rem] sm:leading-[12rem] leading-normal lg:pl-20"
           >
             {title.map((letter, index) => (
@@ -54,7 +54,7 @@ const Header = () => {
             whileHover={{ color: "black" }}
             href="#About"
             style={{ originX: 0, originY: 1 }}
-            className="circle cursor-pointer relative top-20 bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
+            className="circle cursor-pointer relative top-28 bg-black w-40 h-40 rounded-full sm:flex hidden flex-col justify-center items-center gap-4 transition-all duration-500 ease-out"
           >
             <motion.div
               variants={aboutMeBtn}
