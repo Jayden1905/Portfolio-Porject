@@ -8,8 +8,10 @@ import {
   lineAbout,
   showContent,
 } from "../../animation";
+import { useGlobalContext } from "../../components/Context/ContextProvider";
 
 const About = () => {
+  const { abouts } = useGlobalContext();
   const [title, titleControl] = useScroll();
   const [header, headerControl] = useScroll();
   const [line, lineControl] = useScroll();
@@ -43,7 +45,7 @@ const About = () => {
               variants={aboutHeader}
               initial="hidden"
               animate={headerControl}
-              className="text-md font-saira_light"
+              className="text-md text-justify font-saira_light"
             >
               Developing a website is similar to writing a tale, which is what I
               love to do. Similarly, designing a website to make it usable is
@@ -63,114 +65,37 @@ const About = () => {
             className="mt-8 h-[1px] bg-white opacity-30"
           ></motion.div>
           <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2">
-            <div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira text-4xl"
-              >
-                Name
-              </motion.p>
-              <motion.div
-                ref={text}
-                variants={lineAbout}
-                initial="hidden"
-                animate={textControl}
-                className="mt-6 mb-6 h-[1px] bg-white opacity-30"
-              ></motion.div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira_light"
-              >
-                I am Kyaw Za Yan Naing.
-              </motion.p>
-            </div>
-            <div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira text-4xl"
-              >
-                Age
-              </motion.p>
-              <motion.div
-                ref={text}
-                variants={lineAbout}
-                initial="hidden"
-                animate={textControl}
-                className="mt-6 mb-6 h-[1px] bg-white opacity-30"
-              ></motion.div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira_light"
-              >
-                I am 19 years old.
-              </motion.p>
-            </div>
-            <div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira text-4xl"
-              >
-                Location
-              </motion.p>
-              <motion.div
-                ref={text}
-                variants={lineAbout}
-                initial="hidden"
-                animate={textControl}
-                className="mt-6 mb-6 h-[1px] bg-white opacity-30"
-              ></motion.div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira_light"
-              >
-                I am based in Myanmar.
-              </motion.p>
-            </div>
-            <div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira text-4xl"
-              >
-                Occupation
-              </motion.p>
-              <motion.div
-                ref={text}
-                variants={lineAbout}
-                initial="hidden"
-                animate={textControl}
-                className="mt-6 mb-6 h-[1px] bg-white opacity-30"
-              ></motion.div>
-              <motion.p
-                ref={text}
-                variants={aboutText}
-                initial="hidden"
-                animate={textControl}
-                className="font-saira_light"
-              >
-                I am a full time student and freelance developer.
-              </motion.p>
-            </div>
+            {abouts.map((data, index) => (
+              <div key={index}>
+                <div className="overflow-hidden">
+                  <motion.p
+                    ref={text}
+                    variants={aboutText}
+                    initial="hidden"
+                    animate={textControl}
+                    className="font-saira text-4xl"
+                  >
+                    {data.title}
+                  </motion.p>
+                </div>
+                <motion.div
+                  ref={text}
+                  variants={lineAbout}
+                  initial="hidden"
+                  animate={textControl}
+                  className="mt-6 mb-6 h-[1px] bg-white opacity-30"
+                ></motion.div>
+                <motion.p
+                  ref={text}
+                  variants={aboutText}
+                  initial="hidden"
+                  animate={textControl}
+                  className="font-saira_light"
+                >
+                  {data.description}
+                </motion.p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

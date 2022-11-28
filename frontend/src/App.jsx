@@ -9,7 +9,7 @@ const App = () => {
     <ContextProvider>
       <div
         id="Home"
-        className="scroll-smooth flex w-full h-full flex-col text-white overflow-x-hidden"
+        className="flex flex-col overflow-x-hidden scroll-smooth text-white"
       >
         <Cursor />
         <Navbar />
