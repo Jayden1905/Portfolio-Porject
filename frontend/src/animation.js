@@ -267,8 +267,7 @@ export const showContent = {
     transition: {
       duration: 1.5,
       ease: "easeOut",
-      staggerChildren: 1.5,
-      delayChildren: 0.5,
+      staggerChildren: 0.75,
     },
   },
 
@@ -506,7 +505,7 @@ export const topLoading = {
     top: "-100%",
     transition: {
       duration: 0.75,
-      delay: 1.6,
+      delay: 0.75,
       ease: "easeIn",
     },
   },

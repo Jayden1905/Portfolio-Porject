@@ -35,8 +35,6 @@ const Header = () => {
           </div>
           <motion.h1
             variants={waveContainer}
-            initial="hidden"
-            animate="show"
             className="flex select-none overflow-hidden font-saira_light text-[5rem] leading-normal sm:text-[8rem] sm:leading-[12rem] lg:pl-20 lg:text-[12rem]"
           >
             {title.map((letter, index) => (

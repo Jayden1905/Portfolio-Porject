@@ -11,14 +11,14 @@ export default function Loading() {
         animate="show"
         className="absolute top-0 h-full w-full bg-secondary"
       ></motion.div>
-      <div className="h-[6rem] overflow-hidden sm:h-[8rem]">
+      <div className="h-[6rem] overflow-hidden sm:h-[10rem]">
         <motion.h1
           variants={loadingTitle}
           initial="hidden"
           animate="show"
-          className="font-sairatext-white text-8xl transition-all delay-700 duration-1000 ease-in-out sm:text-9xl"
+          className="font-sairatext-white text-6xl transition-all duration-1000 ease-in-out md:text-8xl lg:text-9xl"
         >
-          HELLO!
+          Hi, I'm Jayden.
         </motion.h1>
       </div>
     </div>
