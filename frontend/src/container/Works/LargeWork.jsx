@@ -6,7 +6,7 @@ import useScroll from "../../hooks/useScroll";
 import { lineAbout, aboutText } from "../../animation";
 import { urlFor } from "../../client";
 
-export default function Work({ image, title, description }) {
+export default function LargeWork({ image, title, description, link }) {
   const { mouseView, mouseDefault, mousePosition } = useGlobalContext();
   const [hover, setHover] = useState(false);
   const [line, lineControl] = useScroll();
@@ -23,7 +23,8 @@ export default function Work({ image, title, description }) {
   };
   return (
     <motion.a
-      href="/#"
+      href={link}
+      target="_blank"
       onMouseEnter={projectEnter}
       onMouseLeave={projectLeave}
       className="group relative h-full w-full"
@@ -48,13 +49,13 @@ export default function Work({ image, title, description }) {
                 y: mousePosition.y - 300,
               }
         }
-        className={`project pointer-events-none fixed top-20 left-16 z-10 bg-secondary px-10 py-20 transition-all duration-300 ease-out`}
+        className={`project pointer-events-none fixed top-16 left-0 z-10 bg-secondary px-10 py-20 transition-all duration-300 ease-out`}
       >
         <motion.div className={`h-[350px] w-[500px]`}>
           <img
             src={urlFor(image)}
             alt="ignite"
-            className="h-full w-full object-center"
+            className="h-full w-full object-contain"
           />
         </motion.div>
       </motion.div>
@@ -63,7 +64,7 @@ export default function Work({ image, title, description }) {
         variants={aboutText}
         initial="hidden"
         animate={textControl}
-        className="mb-16 flex w-full items-center justify-between px-32 transition-all duration-500 ease-out group-hover:px-28 xl:px-48 xl:group-hover:px-44"
+        className="mb-16 flex w-full items-center justify-between px-20 transition-all duration-500 ease-out group-hover:px-16 xl:px-32 xl:group-hover:px-28"
       >
         <h1 className="font-saira text-6xl transition-all duration-500 ease-out group-hover:opacity-30">
           {title}

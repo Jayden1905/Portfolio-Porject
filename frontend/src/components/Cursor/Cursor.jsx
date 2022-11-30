@@ -24,7 +24,7 @@ const Cursor = () => {
         } opacity-100`}
       ></motion.div>
       {mouseVarient === "view" && (
-        <motion.h1 className="-translate-x-[2px] font-saira_light text-sm text-dark">
+        <motion.h1 className="-translate-x-[2px] font-saira_light text-sm text-white">
           view
         </motion.h1>
       )}

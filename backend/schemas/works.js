@@ -8,11 +8,15 @@ export default {
       title: "Title",
       type: "string",
     },
-
     {
       name: "description",
       title: "Description",
       type: "string",
+    },
+    {
+      name: "year",
+      title: "Year",
+      type: "number",
     },
     {
       name: "projectLink",

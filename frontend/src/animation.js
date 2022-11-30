@@ -195,7 +195,8 @@ export const cursorAnimation = (mousePosition) => {
     view: {
       ...mouseMoveTracker(mousePosition),
       scale: 1.5,
-      backgroundColor: "white",
+      backgroundColor: "#151515",
+      borderColor: "#151515",
     },
   };
 };
@@ -433,7 +434,7 @@ export const aboutTitle = {
 
 export const workTitle = {
   hidden: {
-    y: 50,
+    y: 40,
   },
 
   show: {
@@ -527,5 +528,19 @@ export const topLoading = {
       delay: 0.75,
       ease: "easeIn",
     },
+  },
+};
+
+export const imageShow = {
+  hidden: {
+    opacity: 0,
+    scale: 0.6,
+  },
+
+  show: {
+    opacity: 1,
+    scale: 1,
+    duration: 1.5,
+    ease: "easeOut",
   },
 };
