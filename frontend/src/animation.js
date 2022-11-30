@@ -192,6 +192,11 @@ export const cursorAnimation = (mousePosition) => {
       backgroundColor: "rgba(255,255,255,0.2)",
       borderColor: "rgba(255,255,255,0)",
     },
+    view: {
+      ...mouseMoveTracker(mousePosition),
+      scale: 1.5,
+      backgroundColor: "white",
+    },
   };
 };
 
@@ -415,6 +420,20 @@ export const aboutAnimation = {
 export const aboutTitle = {
   hidden: {
     y: 100,
+  },
+
+  show: {
+    y: 0,
+    transition: {
+      duration: 0.75,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const workTitle = {
+  hidden: {
+    y: 50,
   },
 
   show: {

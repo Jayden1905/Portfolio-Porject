@@ -17,12 +17,17 @@ const Cursor = () => {
       animate={mouseVarient}
     >
       <motion.div
-        className={`h-[4px] w-[4px] rounded-full ${
+        className={`h-[4px] w-[4px] rounded-full font-saira_light text-dark ${
           mouseVarient === "default" || mouseVarient === "scaleUpBlur"
             ? "bg-white"
             : ""
         } opacity-100`}
       ></motion.div>
+      {mouseVarient === "view" && (
+        <motion.h1 className="-translate-x-[2px] font-saira_light text-sm text-dark">
+          view
+        </motion.h1>
+      )}
     </motion.div>
   );
 };

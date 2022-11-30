@@ -15,6 +15,7 @@ const ContextProvider = ({ children }) => {
     y: 500,
   });
   const [abouts, setAbouts] = useState([]);
+  const [works, setWorks] = useState([]);
 
   const [mouseVarient, setMouseVarient] = useState("default");
   const [windowDimension, setWindowDimension] = useState({
@@ -70,6 +71,16 @@ const ContextProvider = ({ children }) => {
 
     fetchAbouts();
 
+    const fetchWorks = async () => {
+      const query = '*[_type == "works"]';
+      const data = await client.fetch(query);
+      data.sort(dynamicSort("_createdAt"));
+
+      setWorks(data);
+    };
+
+    fetchWorks();
+
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
@@ -87,6 +98,10 @@ const ContextProvider = ({ children }) => {
     setMouseVarient("scaleUpBlur");
   };
 
+  const mouseView = () => {
+    setMouseVarient("view");
+  };
+
   const mouseDefault = () => {
     setMouseVarient("default");
   };
@@ -99,9 +114,11 @@ const ContextProvider = ({ children }) => {
         mouseScaleUp,
         mouseChangeBackground,
         mouseSocialLinks,
+        mouseView,
         windowDimension,
         mousePosition,
         abouts,
+        works,
       }}
     >
       {children}

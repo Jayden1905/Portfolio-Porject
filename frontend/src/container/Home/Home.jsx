@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import { motion } from "framer-motion";
 import { showContent } from "../../animation";
 import About from "../About/About";
+import Works from "../Works/Works";
 
 export default function Home() {
   return (
@@ -10,10 +11,11 @@ export default function Home() {
       variants={showContent}
       initial="hidden"
       animate="show"
-      className=" w-screen h-full flex flex-col justify-center items-center"
+      className=" flex h-full w-screen flex-col items-center justify-center"
     >
       <Header />
       <About />
+      <Works />
     </motion.div>
   );
 }
