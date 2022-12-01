@@ -16,7 +16,7 @@ export default function Loading() {
           variants={loadingTitle}
           initial="hidden"
           animate="show"
-          className="font-sairatext-white text-6xl transition-all duration-1000 ease-in-out md:text-8xl lg:text-9xl"
+          className="font-saira text-6xl text-white transition-all duration-1000 ease-in-out md:text-8xl lg:text-9xl"
         >
           Hi, I'm Jayden.
         </motion.h1>
