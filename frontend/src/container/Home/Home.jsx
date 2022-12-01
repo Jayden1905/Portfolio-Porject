@@ -6,6 +6,7 @@ import About from "../About/About";
 import Works from "../Works/Works";
 import Skills from "../Skills/Skills";
 import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Works />
       <Skills />
       <Contact />
+      <Footer />
     </motion.div>
   );
 }
