@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { aboutText, lineAbout } from "../../animation";
 import useScroll from "../../hooks/useScroll";
 
-export const Info = ({ data, index }) => {
+export const Info = ({ data }) => {
   const [text, textControl] = useScroll();
 
   return (
-    <div key={index}>
+    <div>
       <div className="overflow-hidden">
         <motion.p
           ref={text}

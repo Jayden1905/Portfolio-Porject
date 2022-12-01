@@ -65,7 +65,7 @@ const About = () => {
           ></motion.div>
           <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2">
             {abouts.map((data, index) => (
-              <Info data={data} index={index} />
+              <Info data={data} key={index} />
             ))}
           </div>
         </div>

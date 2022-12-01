@@ -49,7 +49,7 @@ export default function Contact() {
     <>
       <div
         id="Contact"
-        className="flex h-screen w-full flex-col items-center justify-center gap-6 p-4 sm:p-0"
+        className="mt-14 flex h-screen w-full flex-col items-center justify-center gap-6 sm:mt-0"
       >
         <motion.h1
           ref={title}
@@ -70,7 +70,7 @@ export default function Contact() {
         >
           <div className="flex w-full flex-col items-center justify-center">
             <input
-              className="w-[60%] rounded-3xl border-2 border-white bg-dark py-2 px-6 font-saira text-white !outline-none transition-all duration-700 ease-out sm:w-[50%] md:w-[40%] lg:w-[30%]"
+              className="w-[65%] rounded-3xl border-2 border-white bg-dark py-2 px-6 font-saira text-white !outline-none transition-all duration-700 ease-out sm:w-[50%] md:w-[40%] lg:w-[30%]"
               type="text"
               placeholder="Your Name"
               name="name"
@@ -81,7 +81,7 @@ export default function Contact() {
           </div>
           <div className="flex w-full flex-col items-center justify-center">
             <input
-              className="w-[60%] rounded-3xl border-2 border-white bg-dark py-2 px-6 font-saira text-white !outline-none sm:w-[50%] md:w-[40%] lg:w-[30%]"
+              className="w-[65%] rounded-3xl border-2 border-white bg-dark py-2 px-6 font-saira text-white !outline-none sm:w-[50%] md:w-[40%] lg:w-[30%]"
               type="email"
               placeholder="Your Email"
               name="email"
@@ -92,7 +92,7 @@ export default function Contact() {
           </div>
           <div className="flex w-full flex-col items-center justify-center">
             <textarea
-              className="h-[20rem] w-[60%] rounded-3xl border-2 border-white bg-dark py-2 px-6 font-saira text-white !outline-none sm:w-[50%] md:w-[40%] lg:w-[30%]"
+              className="h-[20rem] w-[65%] rounded-3xl border-2 border-white bg-dark py-2 px-6 font-saira text-white !outline-none sm:w-[50%] md:w-[40%] lg:w-[30%]"
               placeholder="Your Message"
               value={message}
               name="message"
