@@ -10,19 +10,17 @@ const Works = () => {
   const { works } = useGlobalContext();
   const [text, textControl] = useScroll();
   return (
-    <div
-      id="Works"
-      className="h-full w-full overflow-hidden bg-dark p-10 sm:p-24"
-    >
-      <div className="h-[4rem] overflow-hidden">
+    <div className="h-full w-full overflow-hidden bg-dark p-10 sm:p-24">
+      <div className="mt-16 h-[4rem] overflow-hidden">
         <motion.h1
+          id="Works"
           ref={text}
           variants={workTitle}
           initial="hidden"
           animate={textControl}
           className="text-center font-saira_light text-4xl font-semibold leading-[3rem] sm:text-5xl md:leading-[4rem] lg:leading-[4rem]"
         >
-          My recent works
+          My recent projects
         </motion.h1>
       </div>
       <div className="mt-28 hidden w-full flex-col gap-10 lg:flex">

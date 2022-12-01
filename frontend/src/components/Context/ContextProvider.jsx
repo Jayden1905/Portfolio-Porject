@@ -16,6 +16,7 @@ const ContextProvider = ({ children }) => {
   });
   const [abouts, setAbouts] = useState([]);
   const [works, setWorks] = useState([]);
+  const [skills, setSkills] = useState([]);
 
   const [mouseVarient, setMouseVarient] = useState("default");
   const [windowDimension, setWindowDimension] = useState({
@@ -81,6 +82,16 @@ const ContextProvider = ({ children }) => {
 
     fetchWorks();
 
+    const fetchSkills = async () => {
+      const query = '*[_type == "skills"]';
+      const data = await client.fetch(query);
+      data.sort(dynamicSort("_createdAt"));
+
+      setSkills(data);
+    };
+
+    fetchSkills();
+
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
@@ -119,6 +130,7 @@ const ContextProvider = ({ children }) => {
         mousePosition,
         abouts,
         works,
+        skills,
       }}
     >
       {children}

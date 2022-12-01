@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { showContent } from "../../animation";
 import About from "../About/About";
 import Works from "../Works/Works";
+import Skills from "../Skills/Skills";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <About />
       <Works />
+      <Skills />
     </motion.div>
   );
 }

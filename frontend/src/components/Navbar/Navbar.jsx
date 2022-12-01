@@ -88,7 +88,8 @@ const Navbar = () => {
         </motion.div>
         <NavItems open={open} setOpen={setOpen} setCloseDelay={setCloseDelay} />
       </div>
-      <motion.div
+      <motion.a
+        href="#Contact"
         onMouseEnter={mouseSocialLinks}
         onMouseLeave={mouseDefault}
         className="group z-10 ml-auto hidden cursor-pointer items-center justify-center lg:flex"
@@ -117,7 +118,7 @@ const Navbar = () => {
             Oddinary blog!
           </h1>
         </motion.div>
-      </motion.div>
+      </motion.a>
     </div>
   );
 };
