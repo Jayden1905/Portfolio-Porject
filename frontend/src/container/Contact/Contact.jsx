@@ -49,7 +49,7 @@ export default function Contact() {
     <>
       <div
         id="Contact"
-        className="flex h-screen w-full flex-col items-center justify-center gap-6"
+        className="flex h-screen w-full flex-col items-center justify-center gap-6 p-4 sm:p-0"
       >
         <motion.h1
           ref={title}
