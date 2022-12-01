@@ -5,6 +5,7 @@ import { showContent } from "../../animation";
 import About from "../About/About";
 import Works from "../Works/Works";
 import Skills from "../Skills/Skills";
+import Contact from "../Contact/Contact";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Works />
       <Skills />
+      <Contact />
     </motion.div>
   );
 }

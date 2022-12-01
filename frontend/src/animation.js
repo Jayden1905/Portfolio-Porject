@@ -540,7 +540,25 @@ export const imageShow = {
   show: {
     opacity: 1,
     scale: 1,
-    duration: 1.5,
-    ease: "easeOut",
+    transitinon: {
+      duration: 1.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+export const formShow = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+
+  show: {
+    opacity: 1,
+    y: 0,
+    transitinon: {
+      duration: 1.5,
+      ease: "easeOut",
+    },
   },
 };

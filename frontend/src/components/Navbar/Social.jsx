@@ -6,10 +6,13 @@ import { useGlobalContext } from "../Context/ContextProvider";
 export default function Social({ open }) {
   const { mouseSocialLinks, mouseDefault } = useGlobalContext();
   const social = [
-    { name: "Facebook" },
-    { name: "Instagram" },
-    { name: "YouTube" },
-    { name: "Git Hub" },
+    { name: "Facebook", url: "https://www.facebook.com/kyawza.yannaing.77" },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/kz_potay/?igshid=YTY2NzY3YTc%3D",
+    },
+    { name: "YouTube", url: "https://www.youtube.com/@kyawzayannaing8007" },
+    { name: "Git Hub", url: "https://github.com/Jayden1905" },
   ];
 
   return (
@@ -31,7 +34,8 @@ export default function Social({ open }) {
             variants={popUpLink}
           >
             <motion.a
-              href="#"
+              target="_blank"
+              href={item.url}
               className="cursor-pointer text-sm font-extralight tracking-wider lg:text-lg"
             >
               {item.name}

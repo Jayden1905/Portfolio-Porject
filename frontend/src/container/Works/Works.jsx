@@ -11,7 +11,7 @@ const Works = () => {
   const [text, textControl] = useScroll();
   return (
     <div className="h-full w-full overflow-hidden bg-dark p-10 sm:p-24">
-      <div className="mt-16 h-[4rem] overflow-hidden">
+      <div className="mt-16 h-[4rem] sm:overflow-hidden">
         <motion.h1
           id="Works"
           ref={text}
