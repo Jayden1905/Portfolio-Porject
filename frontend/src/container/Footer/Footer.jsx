@@ -13,6 +13,7 @@ const Footer = () => {
           onMouseLeave={mouseDefault}
           href="#Home"
           class="ml-2"
+          target="_blank"
         >
           ODDINARY
         </motion.a>
@@ -22,7 +23,9 @@ const Footer = () => {
         <motion.li onMouseEnter={mouseSocialLinks} onMouseLeave={mouseDefault}>
           <a
             href="https://www.facebook.com/kyawza.yannaing.77"
+            rel="facebook noreferrer"
             class="mr-4 md:mr-6"
+            target="_blank"
           >
             Facebook
           </a>
@@ -33,6 +36,7 @@ const Footer = () => {
             onMouseLeave={mouseDefault}
             href="https://www.instagram.com/kz_potay/?igshid=YTY2NzY3YTc%3D"
             class="mr-4 md:mr-6"
+            target="_blank"
           >
             Instagram
           </motion.a>
@@ -43,6 +47,7 @@ const Footer = () => {
             onMouseLeave={mouseDefault}
             href="https://www.youtube.com/@kyawzayannaing8007"
             class="mr-4 md:mr-6"
+            target="_blank"
           >
             Youtube
           </motion.a>
@@ -52,6 +57,7 @@ const Footer = () => {
             onMouseEnter={mouseSocialLinks}
             onMouseLeave={mouseDefault}
             href="https://github.com/Jayden1905"
+            target="_blank"
           >
             GitHub
           </motion.a>
