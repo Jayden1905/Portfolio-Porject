@@ -17,7 +17,7 @@ export default function SmallWork({
   const [line, lineControl] = useScroll();
   const [text, textControl] = useScroll();
   return (
-    <div className="aspect-square">
+    <div className="">
       <motion.a
         onMouseEnter={mouseView}
         onMouseLeave={mouseDefault}
@@ -29,7 +29,7 @@ export default function SmallWork({
           variants={imageShow}
           initial="hidden"
           animate={imageControl}
-          className="bg-secondary px-10 py-20 transition-all duration-700 ease-out"
+          className="bg-secondary px-5 py-10 transition-all duration-700 ease-out sm:px-10 sm:py-20"
         >
           <motion.img
             src={urlFor(imageUrl)}
