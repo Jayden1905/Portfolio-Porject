@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import useScroll from "../../hooks/useScroll";
 import {
   aboutHeader,
-  aboutText,
   aboutTitle,
   lineAbout,
   showContent,
@@ -16,7 +15,6 @@ const About = () => {
   const [title, titleControl] = useScroll();
   const [header, headerControl] = useScroll();
   const [line, lineControl] = useScroll();
-  const [text, textControl] = useScroll();
 
   return (
     <motion.div
