@@ -527,7 +527,7 @@ export const topLoading = {
     top: "-100%",
     transition: {
       duration: 0.75,
-      delay: 0.75,
+      delay: 0.95,
       ease: "easeIn",
     },
   },

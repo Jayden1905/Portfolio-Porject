@@ -56,7 +56,7 @@ export default function Contact() {
           variants={aboutText}
           initial="hidden"
           animate={titleControl}
-          className="mb-20 font-saira text-5xl"
+          className="mb-20 font-saira text-4xl sm:text-5xl"
         >
           Contact Me
         </motion.h1>
