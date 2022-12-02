@@ -10,7 +10,7 @@ export default function Logo() {
   return (
     <motion.div variants={logoAnim} initial="hidden" animate="show">
       <motion.a
-        href="#"
+        href="#Home"
         className="mr-5 flex cursor-pointer font-saira text-4xl tracking-wider"
         onMouseEnter={mouseSocialLinks}
         onMouseLeave={mouseDefault}
