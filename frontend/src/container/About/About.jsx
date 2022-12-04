@@ -36,8 +36,8 @@ const About = () => {
           ensure long term success.
         </motion.h1>
       </div>
-      <div className="mt-20 flex h-full w-full pb-[4.8rem]">
-        <div className="ml-auto w-full md:w-[75%] lg:w-[60%]">
+      <div className="mt-20 flex h-full w-full justify-end pb-[4.8rem]">
+        <div className="w-full lg:w-[60%]">
           <div className="title overflow-hidden">
             <motion.p
               ref={header}
