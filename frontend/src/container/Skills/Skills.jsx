@@ -36,7 +36,7 @@ const Skills = () => {
         </motion.h1>
       </div>
       <div className="mt-20 flex h-full w-full items-center justify-center">
-        <div className="w-full md:w-[75%] lg:w-[60%]">
+        <div className="w-full lg:w-[60%]">
           <div className="title overflow-hidden">
             <motion.p
               ref={header}
