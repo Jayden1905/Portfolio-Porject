@@ -300,7 +300,7 @@ export const textAnim = {
 
 export const aboutMeBtn = {
   initial: {
-    opacity: 0,
+    scale: 0,
   },
 
   animate: {

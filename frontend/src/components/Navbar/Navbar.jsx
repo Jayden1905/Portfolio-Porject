@@ -88,37 +88,39 @@ const Navbar = () => {
         </motion.div>
         <NavItems open={open} setOpen={setOpen} setCloseDelay={setCloseDelay} />
       </div>
-      <motion.a
-        href="#Contact"
-        onMouseEnter={mouseSocialLinks}
-        onMouseLeave={mouseDefault}
-        className="group z-10 ml-auto hidden cursor-pointer items-center justify-center lg:flex"
-        variants={contactParent}
-        initial="hidden"
-        animate="show"
-      >
-        <motion.div
-          className="bg-circle absolute mr-20 h-14 w-14 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8.5rem]"
-          variants={contactAnim}
-        ></motion.div>
-        <motion.h1
-          className="text-md z-10 ml-1 font-saira tracking-tight transition-all duration-100 ease-out group-hover:!opacity-100"
-          variants={contactAnimContent}
+      <div className="z-10 ml-auto hidden items-center justify-center lg:flex">
+        <motion.a
+          href="#Contact"
+          onMouseEnter={mouseSocialLinks}
+          onMouseLeave={mouseDefault}
+          className="group cursor-pointer items-center justify-center flex"
+          variants={contactParent}
+          initial="hidden"
+          animate="show"
         >
-          Contact Me
-        </motion.h1>
+          <motion.div
+            className="bg-circle absolute mr-20 h-14 w-14 rounded-full bg-black transition-all duration-500 ease-out group-hover:mr-0 group-hover:w-[8.5rem]"
+            variants={contactAnim}
+          ></motion.div>
+          <motion.h1
+            className="text-md z-10 ml-1 font-saira tracking-tight transition-all duration-100 ease-out group-hover:!opacity-100"
+            variants={contactAnimContent}
+          >
+            Contact Me
+          </motion.h1>
+        </motion.a>
         <motion.div
           className={`z-10 ${
             open
               ? "translate-y-0 opacity-100 delay-700"
               : "translate-y-20 opacity-0 delay-300"
-          } pointer-events-none absolute top-full mt-[16rem] hidden rotate-90 select-none transition-all duration-500 ease-out lg:block`}
+          } absolute cursor-pointer top-full mt-[16rem] hidden rotate-90 select-none transition-all duration-500 ease-out lg:block`}
         >
           <h1 className="text w-[25rem] border-white font-saira text-5xl tracking-widest">
             Oddinary blog!
           </h1>
         </motion.div>
-      </motion.a>
+      </div>
     </div>
   );
 };

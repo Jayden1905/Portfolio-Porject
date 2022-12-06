@@ -58,7 +58,7 @@ const Header = () => {
               variants={aboutMeBtn}
               initial="initial"
               animate={hover ? "animate" : "initial"}
-              className="absolute h-1 w-1 rounded-full bg-white transition-all duration-500 ease-out"
+              className="absolute h-1 w-1 rounded-full bg-white transition-all duration-100 ease-out"
             ></motion.div>
             <p className="z-10 select-none">About me</p>
             <FontAwesomeIcon className="z-10" icon={faArrowDown} />
